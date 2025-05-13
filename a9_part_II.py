@@ -37,7 +37,7 @@ def get_birth_date(name: str) -> str:
     """
     infobox_text = clean_text(get_first_infobox_text(get_page_html(name)))
     # TODO: fill this in
-    pattern = "REPLACE ME"
+    pattern = "Born\D*(?P<birth>\d{4}-\d{2}-\d{2})"
     error_text = (
         "Page infobox has no birth information (at least none in xxxx-xx-xx format)"
     )
@@ -60,8 +60,8 @@ if __name__ == "__main__":
     # print('\n<<<< Running asserts, this might take a sec >>>>')
     # assert get_planet_radius("Mars") == "3376.2", "Incorrect radius for Mars"
     # assert get_planet_radius("Earth") == "6356.752", "Incorrect radius for Earth"
-    # assert get_planet_radius("Jupiter") == "66,854", "Incorrect radius for Jupiter"
-    # assert get_planet_radius("Saturn") == "54,364", "Incorrect radius for Saturn"
+    # assert get_planet_radius("Jupiter") == "66854", "Incorrect radius for Jupiter"
+    # assert get_planet_radius("Saturn") == "54364", "Incorrect radius for Saturn"
     # print('\n<<<< Planet radius tests passed >>>>')
 
     print("\n<<<<<<<<<<<<<< Testing Birth Dates >>>>>>>>>>>>>>")
